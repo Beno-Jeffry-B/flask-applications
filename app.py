@@ -33,6 +33,7 @@ app = Flask(__name__)
 def hello_world():
     return "hello!!!"
 
+@app.route("/about")
 def about():
     return "This is about page..." # here is where html pages are rendered..!
 
