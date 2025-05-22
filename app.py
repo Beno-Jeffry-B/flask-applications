@@ -1,6 +1,7 @@
 '''
     --> Hello world API
     --> Routing Basics
+    --> Dynamic Routing(str and other types)
 
     running flask application
     
@@ -42,3 +43,13 @@ def about():
 @app.route("/<u_name>")  #for str type
 def name(u_name):
     return f"This is {u_name} page!"
+
+
+@app.route("/<int:number>")  # <variable> name should be same as parameter name too...
+def num(number):   
+    return f"This is int type dynmic route of {number}"
+
+
+@app.route("/<u_name>/<int:post_number>") 
+def posts(u_name , post_number):   #The URL variables in the function parameters must be in the same order as in the route URL
+    return f"This is {u_name}'s Post {post_number}"
