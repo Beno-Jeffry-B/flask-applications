@@ -37,3 +37,8 @@ def hello_world():
 def about():
     return "This is about page..." # here is where html pages are rendered..!
 
+#dynamic routing
+
+@app.route("/<u_name>")  #for str type
+def name(u_name):
+    return f"This is {u_name} page!"
