@@ -20,6 +20,7 @@ Note
 
    -->   
     return render_template("index.html",  name = "Beno Jeffry")  # expects keyword args not regular args
+
     
 '''
 
@@ -29,15 +30,43 @@ app = Flask(__name__)
 
 
 
-@app.route('/')
+@app.route('/dashboard')
 def homepage():
     return "homepage"
 
 
 
-@app.route('/dashboard')
+@app.route('/')
 def dashboard():
-    age  = 18
-    return render_template("index.html",  name = "Beno Jeffry" ,age=age)  # expects keyword args not regular args
-
+   appointments = [
+        {
+            'id': 1,
+            'name': 'Ravi Kumar',
+            'time': '10:00 AM',
+            'doctor': 'Dr. Meena Sharma',
+            'status': 'Waiting'
+        },
+        {
+            'id': 2,
+            'name': 'Priya Iyer',
+            'time': '10:30 AM',
+            'doctor': 'Dr. Arjun Patel',
+            'status': 'Checked In'
+        },
+        {
+            'id': 3,
+            'name': 'Sathish N',
+            'time': '11:00 AM',
+            'doctor': 'Dr. Meena Sharma',
+            'status': 'Waiting'
+        },
+        {
+            'id': 4,
+            'name': 'Kavitha R',
+            'time': '11:30 AM',
+            'doctor': 'Dr. Arjun Patel',
+            'status': 'Waiting'
+        }
+    ]
+   return render_template('index.html',appointments=appointments)
 
