@@ -39,11 +39,11 @@
         <tbody>
             {% for row in appointments %}
             <tr>
-                <td>id</td>
-                <td>name</td>
-                <td>time</td>
-                <td>doctor</td>
-                <td>status</td>
+                <td>{{ row.id }}</td>
+                <td>{{ row.name }}</td>
+                <td>{{ row.time }}</td>
+                <td>{{ row.doctor }}</td>
+                <td>{{ row.status }}</td>
             </tr>
             {% endfor %}
         </tbody>
