@@ -30,15 +30,15 @@ app = Flask(__name__)
 
 
 
-@app.route('/dashboard')
+@app.route('/')
 def homepage():
     return "homepage"
 
 
 
-@app.route('/')
+@app.route('/dashboard')
 def dashboard():
-   appointments = [
+    appointments = [
         {
             'id': 1,
             'name': 'Ravi Kumar',
@@ -66,7 +66,6 @@ def dashboard():
             'time': '11:30 AM',
             'doctor': 'Dr. Arjun Patel',
             'status': 'Waiting'
-        }
-    ]
-   return render_template('index.html',appointments=appointments)
-
+        }]
+    
+    return render_template('index.html',appointments=appointments)

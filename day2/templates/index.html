@@ -6,22 +6,71 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Receptionist Dashboard</title>
 
+    <style>
+
+    </style>
+
 </head>
 
 <body>
 
     <h1>Receptionist Dashboard</h1>
+
     <p>
         {{appointments}}
     </p>
 
 
-    <!--
-    
-    jinja syntaxes:
-        {{ }}  -- when you want to output the result of an expression
-        {% %}  --  do not output anything by themselves but control how the template is rendered. (CONTROL FLOW)
--->
+
+
+    <table>
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>name</th>
+                <th>time</th>
+                <th>doctor</th>
+                <th>status</th>
+            </tr>
+
+        </thead>
+
+
+        <tbody>
+            {% for row in appointments %}
+            <tr>
+                <td>id</td>
+                <td>name</td>
+                <td>time</td>
+                <td>doctor</td>
+                <td>status</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+
+
+    </table>
+
+
+
+
+    {#
+    IMPORTANT NOTE:
+    Use Jinja2 comments for notes about Jinja syntax, NOT HTML comments!
+
+    Jinja2 processes everything inside the template file — including inside HTML comments.
+
+    So, Thats y it caused error before...!
+
+
+
+    {{}} -- when you want to output the result of an expression
+    {% %} -- do not output anything by themselves but control how the template is rendered. (CONTROL FLOW)
+
+
+    #}
+
+
 
 
 
