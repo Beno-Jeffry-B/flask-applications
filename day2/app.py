@@ -1,6 +1,6 @@
 '''
     --> render_template 
- 
+    --> data transfer to templates
 
 PROBLEM STATMENT:
     Create a system for receptionists to view and manage patients who come in for appointments.
@@ -16,6 +16,11 @@ Note
 
     for eg:
         -->  app = Flask(__name__, template_folder='html_pages')
+
+
+   -->   
+    return render_template("index.html",  name = "Beno Jeffry")  # expects keyword args not regular args
+    
 '''
 
 
@@ -32,6 +37,7 @@ def homepage():
 
 @app.route('/dashboard')
 def dashboard():
-    return render_template("index.html")
+    age  = 18
+    return render_template("index.html",  name = "Beno Jeffry" ,age=age)  # expects keyword args not regular args
 
 
