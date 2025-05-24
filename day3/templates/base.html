@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block title %}
+        {% endblock %}
+    </title>
+
+    <style>
+        * {
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: hsl(30, 59%, 85%);
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        nav {
+            background-color: hsl(30, 59%, 55%);
+            height: 70px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+
+        }
+
+        img {
+            height: 75px;
+        }
+
+        ul {
+            display: flex;
+            gap: 70px;
+            list-style: none;
+
+        }
+
+        li {
+            font-weight: bolder;
+            font-size: 1.4rem;
+            color: hsl(30, 59%, 15%);
+            padding: 13px 0;
+            cursor: pointer;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                height: auto;
+                padding: 10px;
+            }
+
+            ul {
+                flex-direction: column;
+                gap: 10px;
+                align-items: flex-start;
+            }
+
+            img {
+                display: none;
+            }
+
+            li {
+                font-size: 1.2rem;
+                width: 100%;
+                padding: 13px 20px;
+
+            }
+
+        }
+
+        @media (max-width: 480px) {
+            li {
+                font-size: 1.2rem;
+            }
+
+            img {
+                height: 50px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <img src="{{ url_for('static', filename='icon.png') }}" alt="Store Logo">
+
+        <ul>
+            <li href="#">Home</li>
+            <li href="#">View Books</li>
+            <li href="#">Cart</li>
+            <li href="#">Login</li>
+        </ul>
+    </nav>
+    {% block content %}
+    {% endblock %}
+</body>
+
+</html>
