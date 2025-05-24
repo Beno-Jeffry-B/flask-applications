@@ -14,8 +14,8 @@
 
 * how to create and activate venv
 
-     `python -m venv venv` in the folder u are working with(curren folder)
-     `venv\Scripts\activate`
+     * `python -m venv venv` in the folder u are working with(curren folder)
+     * `venv\Scripts\activate`
 
     Here Below u can see that we are not using global env thats y flask is not found... is shown
     so install them seperatly in the current folder for avoid version Conflicts.
