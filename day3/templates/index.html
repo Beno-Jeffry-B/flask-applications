@@ -1,10 +1,113 @@
-{% extends 'base.html'%}
+{% extends 'base.html' %}
 
 {% block title %}
 Landing_Page
 {% endblock %}
 
-
 {% block content %}
-Landing_Page
+<style>
+    body {
+        background-color: hsl(30, 59%, 85%);
+        font-family: 'Gill Sans', sans-serif;
+    }
+
+    .welcome-title {
+        color: #205072;
+        margin: 20px 0 10px 0;
+        text-align: center;
+        font-size: 2.5rem;
+    }
+
+    .welcome-quote {
+        color: #7A5C61;
+        font-style: italic;
+        text-align: center;
+        margin-bottom: 30px;
+        font-size: 18px;
+    }
+
+
+    .explore-btn {
+        display: inline-block;
+        background: linear-gradient(to right, #FF6F61, #FFB347);
+        color: white;
+        font-size: 18px;
+        font-weight: 600;
+        padding: 12px 30px;
+        border: none;
+        border-radius: 50px;
+        text-decoration: none;
+        transition: all 0.3s ease-in-out;
+        box-shadow: 0 8px 20px rgba(255, 111, 97, 0.3);
+        margin: 30px auto 0 auto;
+    }
+
+    .explore-btn:hover {
+        transform: scale(1.05);
+        box-shadow: 0 10px 25px rgba(255, 111, 97, 0.4);
+    }
+
+    .button-wrapper {
+        text-align: center;
+    }
+
+    .marquee-container {
+        width: 100%;
+        overflow: hidden;
+        background-color: hsl(30, 59%, 85%);
+        margin: 20px 0;
+        padding: 20px 0;
+    }
+
+    .marquee-left {
+        display: flex;
+        animation: scroll-left 15s linear infinite;
+    }
+
+    .marquee img {
+        height: 350px;
+        margin-right: 30px;
+        border-radius: 8px;
+        object-fit: contain;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    @keyframes scroll-left {
+        0% {
+            transform: translateX(0);
+        }
+
+        100% {
+            transform: translateX(-50%);
+        }
+    }
+
+    .main-container {
+        margin-top: 5%;
+    }
+</style>
+
+<div class="main-container">
+    <h2 class="welcome-title">Welcome to Online Book Store...!</h2>
+    <h4 class="welcome-quote">"A room without books is like a body without a soul." - Cicero</h4>
+
+    <div class="marquee-container">
+        <div class="marquee marquee-left">
+            {% for i in range(5) %}
+            <img src="{{ url_for('static', filename='book1.jpeg') }}" alt="Book 1">
+            <img src="{{ url_for('static', filename='book2.jpeg') }}" alt="Book 2">
+            <img src="{{ url_for('static', filename='book3.jpeg') }}" alt="Book 3">
+            <img src="{{ url_for('static', filename='book4.jpeg') }}" alt="Book 4">
+            <img src="{{ url_for('static', filename='book5.jpeg') }}" alt="Book 5">
+            <img src="{{ url_for('static', filename='book6.jpeg') }}" alt="Book 6">
+            <img src="{{ url_for('static', filename='book7.jpeg') }}" alt="Book 7">
+            <img src="{{ url_for('static', filename='book8.jpeg') }}" alt="Book 8">
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="button-wrapper">
+        <a href="#" class="explore-btn">Explore</a>
+    </div>
+</div>
 {% endblock %}
