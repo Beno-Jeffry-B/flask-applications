@@ -24,5 +24,30 @@ Notes to keep up:
     (venv) PS C:\Users\jeffr\OneDrive\Desktop\SUMMER PROJECTS\web dev\flask-applications\day3> 
 
 
+### DAY 3 Challenges (TEMPLATES INHERITANCE)
 
-    
+
+### Challenge Faced
+
+The image (`icon.png`) was not displaying in the HTML page when using Flask.
+
+### How It Was Solved
+
+The issue was due to placing the image inside the `templates/` folder. Flask requires all static files (images, CSS, JS) to be inside a folder named `static/`. After moving `icon.png` to the correct `static/` folder and using `{{ url_for('static', filename='icon.png') }}`, the image loaded successfully.
+
+### Keep in Mind (FOLDER STRUCTURE IS THE KEY)
+
+* Place HTML files in the `templates/` folder.
+* Place images, CSS, and JS in the `static/` folder.
+* Use `url_for('static', filename='yourfile')` to link static files.
+* Maintain the correct folder structure:
+
+  ```
+  your_project/
+  ├── app.py
+  ├── templates/
+  │   └── base.html
+  └── static/
+      └── icon.png
+  ```
+
