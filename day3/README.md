@@ -21,7 +21,7 @@
     so install them seperatly in the current folder for avoid version Conflicts.
 
     (venv) PS C:\Users\jeffr\OneDrive\Desktop\SUMMER PROJECTS\web dev\flask-applications\day3> `pip show flask`
-    # `WARNING: Package(s) not found: flask`
+    #### `WARNING: Package(s) not found: flask`
     (venv) PS C:\Users\jeffr\OneDrive\Desktop\SUMMER PROJECTS\web dev\flask-applications\day3> 
 
 
