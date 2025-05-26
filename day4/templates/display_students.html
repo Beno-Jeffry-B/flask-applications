@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Students</title>
+
+    <style>
+        table,
+        th {
+            border: 2px solid black;
+            padding: 10px;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Student Details</h2>
+
+    <table>
+        <tr>
+            <th>S.No</th>
+            <th>Name</th>
+            <th>gpa</th>
+            <th>email</th>
+            <th>Date of Birth</th>
+            <th>Address</th>
+        </tr>
+
+        {% for s in row %}
+        <tr>
+            <th>{{s.id}}</th>
+            <th>{{s.name}}</th>
+            <th>{{s.gpa}}</th>
+            <th>{{s.email}}</th>
+            <th>{{s.dob}}</th>
+            <th>{{s.address}}</th>
+        </tr>
+        {% endfor %}
+
+
+    </table>
+</body>
+
+</html>

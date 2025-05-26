@@ -4,7 +4,7 @@
         Store sample data in Db and fetch adn display the info in the page
 
 '''
-from flask import Flask
+from flask import Flask , render_template
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime # for Date type
 
@@ -25,9 +25,13 @@ class Student(db.Model):
     
 @app.route("/")
 def home_page():
-    return ("HOME PAGE")
+   row =  Student.query.all()
+   return render_template("display_students.html" , row = row)
 
 
+app.route("/insertstudent")
+def insert_student():
+    return render_template()
 
 
 
