@@ -9,6 +9,12 @@ def insert_student():
 
         print("Success..!")
 
-insert_student()
-        
+#insert_student()
+
+def display_student():
+    with app.app_context():
+        for s in Student.query.all():
+            print(f"name : {s.name}\ngpa : {s.gpa}\nemail : {s.email}\nDate-of-Birth : {s.dob}\nAddress : {s.address}\n")
+
+display_student()        
     
