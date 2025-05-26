@@ -23,11 +23,6 @@ class Student(db.Model):
     address = db.Column(db.Text)
     
     
-    
-
-
-
-    
 @app.route("/")
 def home_page():
     return ("HOME PAGE")
