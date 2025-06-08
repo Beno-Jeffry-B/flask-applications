@@ -4,29 +4,27 @@
 
 ```
 pip install itsdangerous
-
 ```
 
 #### Generation of expiration link
 
-`
+```
 from itsdangerous import TimedJSONWebSignatureSerializer as Serializer
-
-`
+```
 
 In the above library there's no such thing called TimedJSONWebSignatureSerializer anymore now it was used in older verisons
 
 
 #### Instead To below
 
-`
+```
 from itsdangerous import URLSafeTimedSerializer
 
 def generate_token(email):
     s = URLSafeTimedSerializer(app.config['SECRET_KEY'])
     return s.dumps({'email': email})
 
-`
+```
 
 
 
