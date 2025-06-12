@@ -1,0 +1,6 @@
+DOUBTS:(23/3/25)
+
+1)
+what is difference between href in html and flask routes 
+both are redirecting and working in similar fashion then what is the differences??
+

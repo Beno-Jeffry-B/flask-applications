@@ -56,3 +56,8 @@ Because the flash() happens in the Python code, but the display of the message m
 
 
 
+## Very important note must remember:
+
+ When you run with flask run, Flask doesn't treat your script as the main script. Instead, it runs Flask's own internal mechanism, so __name__ == "__main__" is false, and your database_creation() function never gets called.
+
+ 
